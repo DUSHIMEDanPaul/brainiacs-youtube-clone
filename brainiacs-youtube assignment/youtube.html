@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- CSS File -->
+  <link rel="stylesheet" href="styles.css" />
+  <title>Youtube Clone with HTML & CSS</title>
+  <style>
+    .video {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .video .thumbnail {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      transition: transform 0.3s ease-out;
+    }
+
+    .video:hover .thumbnail {
+      transform: scale(1.1);
+    }
+
+    .video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      pointer-events: none; /* Disable pointer events on iframe so hover can work */
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <button2 onclick="toggleDarkMode()"> Dark Mode</button2>
+    <script src="script.js"></script>
+    <div class="logo left">
+      <i id="menu" class="material-icons">menu</i>
+      <img src="https://www.freecodecamp.org/news/content/images/2022/01/yt-logo.png" alt="YouTube Logo">
+    </div>
+
+    <div class="search center">
+      <form action="">
+        <input type="text" placeholder="Search" />
+        <button1><i class="material-icons">search</i></button1>
+      </form>
+      <i class="material-icons mic">mic</i>
+    </div>
+
+    <div class="icons right">
+      <i class="material-icons">videocam</i>
+      <i class="material-icons">apps</i>
+      <i class="material-icons">notifications</i>
+      <i class="material-icons display-this">account_circle</i>
+    </div>
+  </header>
+
+  <main>
+    <div class="side-bar">
+      <div class="nav">
+        <a class="nav-link active">
+          <i class="material-icons">home</i>
+          <span>Home</span>
+        </a>
+        <a class="nav-link">
+          <i class="material-icons">local_fire_department</i>
+          <span>Trending</span>
+        </a>
+        <a class="nav-link">
+          <i class="material-icons">subscriptions</i>
+          <span>Subscriptions</span>
+        </a>
+      </div>
+      <hr>
+      <a class="nav-link">
+        <i class="material-icons">library_add_check</i>
+        <span>Library</span>
+      </a>
+      <a class="nav-link">
+        <i class="material-icons">history</i>
+        <span>History</span>
+      </a>
+      <a class="nav-link">
+        <i class="material-icons">play_arrow</i>
+        <span>Your Videos</span>
+      </a>
+      <a class="nav-link">
+        <i class="material-icons">watch_later</i>
+        <span>Watch Later</span>
+      </a>
+      <a class="nav-link">
+        <i class="material-icons">thumb_up</i>
+        <span>Liked Videos</span>
+      </a>
+    </div>
+    <div class="content">
+      <div class="videos">
+        <!-- Video 1 -->
+        <div class="video" data-video-id="2LBBaD1aQuw">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, '2LBBaD1aQuw')">
+                <img src="https://img.youtube.com/vi/2LBBaD1aQuw/maxresdefault.jpg" alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/Justin Bieber.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>PEPE ONZIMA | BRUCE MELODY</h3>
+                <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ">RTV</a>
+                <span>4M Views • 5 Months Ago</span>
+              </div>
+            </div>
+          </div>
+        <!-- Video 2 -->
+        <div class="video" data-video-id="OZLUa8JUR18">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, 'OZLUa8JUR18')">
+                <img src="https://img.youtube.com/vi/OZLUa8JUR18/maxresdefault.jpg" alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video1.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>INANA| CHRIS EASY</h3>
+                <a href="https://youtu.be/OZLUa8JUR18?si=dImURp1UlugMcnaN">155AM</a>
+                <span>3M Views • 12 Months Ago</span>
+              </div>
+            </div>
+          </div>
+        <!-- Video 3 -->
+        <div class="video" data-video-id="RTWhvp_OD6s">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, 'RTWhvp_OD6s')">
+                <img src="https://img.youtube.com/vi/RTWhvp_OD6s/maxresdefault.jpg" alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video2.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>DOWN IN THE DM | 2001 TERRORISM</h3>
+                <a href="https://www.youtube.com/watch?v=DYiqFEFbzdY">MISS 2021</a>
+                <span>10M Views • 9 Months Ago</span>
+              </div>
+            </div>
+          </div>
+        <!-- Video 4 -->
+        <div class="video" data-video-id="IpInlVhjLGw">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, 'IpInlVhjLGw')">
+                <img src="https://img.youtube.com/vi/IpInlVhjLGw/maxresdefault.jpg" alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video3.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>CHRIS BROWN | HOVER AI</h3>
+                <a href="https://www.youtube.com/watch?v=3O8UyYhlX1I">MUSIC TASTE</a>
+                <span>26M Views • 5 Months Ago</span>
+              </div>
+            </div>
+          </div>
+    
+        <!-- Video 5 -->
+        <div class="video" data-video-id="hkOgGROi8g0">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, 'hkOgGROi8g0')">
+                <img src="https://img.youtube.com/vi/IpInlVhjLGw/maxresdefault.jpg" alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video4.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>SUMMER TIME | LIL WAYNE</h3>
+                <a href="https://www.youtube.com/watch?v=wGJBdZHaEqA">COLOR MUSIC</a>
+                <span>2M Views • 3 Months Ago</span>
+              </div>
+            </div>
+          </div>
+        <!-- Video 6 -->
+        <div class="video" data-video-id="450p7goxZqg">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, '450p7goxZqg')">
+                <img src="https://img.youtube.com/vi/5O8nXZKTrdI/maxresdefault.jpg
+                " alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video5.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>BILL GATES 7 HIS FAMILY | 2024 UPDATE</h3>
+                <a href="https://www.youtube.com/watch?v=5O8nXZKTrdI">EMINEM</a>
+                <span>110K Views • 2 Months Ago</span>
+              </div>
+            </div>
+          </div>
+        
+        <!-- Video 7 -->
+        <div class="video" data-video-id="450p7goxZqg">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, '450p7goxZqg')">
+                <img src="https://img.youtube.com/vi/UOTr_hxctXE/maxresdefault.jpg
+                " alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video6.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>Something Just Like This | The Chainsmokers, Coldplay</h3>
+                <a href="https://www.youtube.com/watch?v=UOTr_hxctXE">THE INCREDIBLE KARDASHIAN'S FAMILY</a>
+                <span>90K Views • 42 Days Ago</span>
+              </div>
+            </div>
+          </div>
+        <!-- Video 8 -->
+        <div class="video" data-video-id="lY2H2ZP56K4">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, 'lY2H2ZP56K4')">
+                <img src="https://img.youtube.com/vi/EZkNUmVXg6U/maxresdefault.jpg
+                " alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video7.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>The Rise of Donald Trump</h3>
+                <a href="https://www.youtube.com/watch?v=EZkNUmVXg6U">USA PRESIDENTIAL ELECTION</a>
+                <span>88K Views • 21 Days Ago</span>
+              </div>
+            </div>
+          </div>
+        
+        <!-- Video 9 -->
+        <div class="video" data-video-id="A9_uomWZt5M">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, 'A9_uomWZt5M')">
+                <img src="https://img.youtube.com/vi/A9_uomWZt5M/maxresdefault.jpg
+                " alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video8.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>U MI LUV</h3>
+              <a href="https://www.youtube.com/watch?v=450p7goxZqg">JAH MIEL U MI LUV (OFFICIAL MUSIC VIDEO)</a>
+              <span>99K Views • 12 Days Ago</span>
+              </div>
+            </div>
+          </div>
+       
+        <!-- Video 10 -->
+        <div class="video" data-video-id="5qap5aO4i9A">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, '5qap5aO4i9A')">
+                <img src="https://img.youtube.com/vi/xqKv6z_-Ziw/maxresdefault.jpg
+                " alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video9.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>Future of Money</h3>
+                <a href="https://www.youtube.com/watch?v=xqKv6z_-Ziw">Crypto World</a>
+                <span>10M Views • 1 Month Ago</span>
+              </div>
+            </div>
+          </div>
+        <!-- Video 11 -->
+        <div class="video" data-video-id="450p7goxZqg">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, '450p7goxZqg')">
+                <img src="https://img.youtube.com/vi/ZIzgydiU0Ng/maxresdefault.jpg
+                " alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video10.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>Me at the Zoo</h3>
+              <a href="https://www.youtube.com/watch?v=ZIzgydiU0Ng">Jawed</a>
+              <span>400M Views • 8 Months Ago</span>
+              </div>
+            </div>
+          </div>
+        <!-- Video 12 -->
+        <div class="video" data-video-id="450p7goxZqg">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, '450p7goxZqg')">
+                <img src="https://img.youtube.com/vi/WzEQQqUNovw/maxresdefault.jpg
+                " alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video11.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>Electrocuted While Alive</h3>
+                <a href="https://www.youtube.com/watch?v=WzEQQqUNovw">National Geographic</a>
+                <span>100M Views • 9 Months Ago</span>
+              </div>
+            </div>
+          </div>
+       
+        <!-- Video 13 -->
+        <div class="video" data-video-id="glaG64Ao7sM">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, 'glaG64Ao7sM')">
+                <img src="https://img.youtube.com/vi/cn_cdtTJxP0/maxresdefault.jpg
+                " alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video12.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>Music at the Heart</h3>
+              <a href="https://www.youtube.com/watch?v=glaG64Ao7sM">Music Lover</a>
+              <span>650K Views • 7 Months Ago</span>
+              </div>
+            </div>
+          </div>
+        <!-- Video 14 -->
+        <div class="video" data-video-id="I-bdgfU_6yQ">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, 'I-bdgfU_6yQ')">
+                <img src="https://img.youtube.com/vi/I-bdgfU_6yQ/maxresdefault.jpg
+                " alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video13.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>Am I Wrong</h3>
+                <a href="https://www.youtube.com/watch?v=I-bdgfU_6yQ">MAGIC SYSTEM</a>
+                <span>8M Views • 1 Month Ago</span>
+              </div>
+            </div>
+          </div>
+        <!-- Video 15 -->
+        <div class="video" data-video-id="450p7goxZqg">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, '450p7goxZqg')">
+                <img src="https://img.youtube.com/vi/AaDiNG8fT-0/maxresdefault.jpg
+
+                " alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video14.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>Shiining Bright Like A Diamond | RIHANNA, LEROI</h3>
+                <h3>RIHANNA</h3>
+              <a href="https://www.youtube.com/watch?v=glaG64Ao7sM">Nigerian Music</a>
+              <span>500K Views • 20 Months Ago</span>
+              </div>
+            </div>
+          </div>
+        
+        <!-- Video 16 -->
+        <div class="video" data-video-id="450p7goxZqg">
+            <div class="thumbnail">
+              <a href="https://youtu.be/2LBBaD1aQuw?si=zFUvlIrmEwCkH2uZ" target="_blank" onclick="openYouTubeVideo(event, '450p7goxZqg')">
+                <img src="https://img.youtube.com/vi/qkgkUCqEum4/maxresdefault.jpg
+                " alt="" />
+              </a>
+              <!-- <iframe
+                class="video-player"
+                src="https://www.youtube.com/embed/2LBBaD1aQuw?autoplay=0&controls=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+            </div>
+            <div class="details">
+              <img class="author-thumbnail" src="/images/video15.jpg" alt="Author Thumbnail" />
+              <div class="title">
+                <h3>USA 2024</h3>
+              <a href="https://www.youtube.com/watch?v=450p7goxZqg">A Beautiful Day</a>
+              <span>200K Views • 4 Months Ago</span>
+              </div>
+            </div>
+          </div>
+         <!-- Modal for Video Playback -->
+      <div id="videoModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <iframe id="videoPlayer" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+  <script>
+    function openYouTubeVideo(event, videoId) {
+      event.preventDefault(); // Prevent default link behavior
+      window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank'); // Open video link in new tab
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const videos = document.querySelectorAll('.video');
+
+      videos.forEach(video => {
+        const thumbnail = video.querySelector('.thumbnail');
+        const iframe = video.querySelector('.video-player');
+        const videoId = video.getAttribute('data-video-id');
+
+        thumbnail.addEventListener('mouseenter', function() {
+          iframe.style.opacity = 1; // Show iframe on hover
+          // Optional: If you want to start playing the video slowly, use the YouTube Player API
+          // You can uncomment this and modify the behavior as needed
+          // iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+        });
+
+        thumbnail.addEventListener('mouseleave', function() {
+          iframe.style.opacity = 0; // Hide iframe on mouse leave
+        });
+      });
+    });
+  </script>
+  <!-- Main Body Ends -->
+</body>
+</html>
